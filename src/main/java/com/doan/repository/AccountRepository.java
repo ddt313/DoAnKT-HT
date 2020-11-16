@@ -14,9 +14,9 @@ import com.doan.model.Account;
 public class AccountRepository {
 
 	private Connection connectionDatabase() {
-		String url = "jdbc:sqlserver://localhost;databaseName=DOAN";
-		String userDB = "sa";
-		String passDB = "123456";
+		String url = "jdbc:postgresql://ec2-3-210-23-22.compute-1.amazonaws.com:5432/d8jdb7pscssrm4";
+		String userDB = "rddcbtnessivop";
+		String passDB = "94dd879b52e76bc5252ca4438a5967ace5c2eac019145290c0d3a9738fe6aa92";
 
 		Connection con = null;
 		try {
