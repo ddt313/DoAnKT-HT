@@ -20,7 +20,7 @@ public class DiaryController {
 	@Autowired
 	private DiaryService diaryService;
 	
-	@CrossOrigin(origins = "http://127.0.0.1:5500")
+	@CrossOrigin(origins = "*")
 	@GetMapping("{username}")
 	public List<Diary> getAllDiary(@PathVariable String username) {
 		return diaryService.getAllDiary(username);

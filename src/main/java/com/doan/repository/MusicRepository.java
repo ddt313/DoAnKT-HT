@@ -16,14 +16,18 @@ import com.doan.model.Music;
 public class MusicRepository {
 	
 	private Connection connectionDatabase() {
-		String url = "jdbc:sqlserver://localhost;databaseName=DOAN";
-		String userDB = "sa";
-		String passDB = "123456";
+//		String url = "jdbc:sqlserver://localhost;databaseName=DOAN";
+		String url = "jdbc:postgresql://ec2-3-210-23-22.compute-1.amazonaws.com:5432/d8jdb7pscssrm4";
+//		String userDB = "sa";
+		String userDB = "rddcbtnessivop";
+//		String passDB = "123456";
+		String passDB = "94dd879b52e76bc5252ca4438a5967ace5c2eac019145290c0d3a9738fe6aa92";
 
 		Connection con = null;
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			con = DriverManager.getConnection(url, userDB, passDB);
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
@@ -104,7 +108,3 @@ public class MusicRepository {
 	}
 
 }
-
-
-//String dbURL = "jdbc:sqlserver://DESKTOP-2N4V5K6;databaseName=DOAN";
-//Connection conn = DriverManager.getConnection(dbURL);
