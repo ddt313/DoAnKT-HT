@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.springframework.stereotype.Repository;
 
@@ -69,6 +70,7 @@ public class DiaryRepository {
 		Connection con = this.connectionDatabase();
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		formatter.setTimeZone(TimeZone.getTimeZone("GMT+7:00"));
 		Date date = new Date();
 		String currentDateTime = formatter.format(date).toString();
 		
