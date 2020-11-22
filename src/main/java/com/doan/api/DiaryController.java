@@ -15,12 +15,13 @@ import com.doan.service.DiaryService;
 
 @RestController
 @RequestMapping("diary")
+
+@CrossOrigin(origins = "*")
 public class DiaryController {
 	
 	@Autowired
 	private DiaryService diaryService;
 	
-	@CrossOrigin(origins = "*")
 	@GetMapping("{username}")
 	public List<Diary> getAllDiary(@PathVariable String username) {
 		return diaryService.getAllDiary(username);

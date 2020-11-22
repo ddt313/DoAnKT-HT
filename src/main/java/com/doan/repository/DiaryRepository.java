@@ -72,7 +72,7 @@ public class DiaryRepository {
 		Date date = new Date();
 		String currentDateTime = formatter.format(date).toString();
 		
-		String sql = "insert into Diary values('" + username + "', " + mu_type + ", '" + currentDateTime + "')";
+		String sql = "insert into Diary(username, id_music, d_time) values('" + username + "', " + mu_type + ", '" + currentDateTime + "')";
 		try {
 			Statement st = con.createStatement();
 			int rs = st.executeUpdate(sql);
