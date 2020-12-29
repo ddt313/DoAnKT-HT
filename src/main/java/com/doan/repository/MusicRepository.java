@@ -83,12 +83,13 @@ public class MusicRepository {
 		String url = "";
 		
 		Connection con = this.connectionDatabase();
-		String sql = "select top(1) src\r\n"
+		String sql = "select src\r\n"
 				+ "from Diary\r\n"
 				+ "inner join Music\r\n"
 				+ "	on Diary.id_music = Music.id\r\n"
 				+ "where username = '" + username + "'\t\n"
-				+ "order by d_time desc";
+				+ "order by d_time desc"
+				+ "limit 1;";
 		
 		try {
 			Statement st = con.createStatement();
