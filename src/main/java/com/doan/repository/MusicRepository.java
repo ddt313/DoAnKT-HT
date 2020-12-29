@@ -22,7 +22,8 @@ public class MusicRepository {
 
 		Connection con = null;
 		try {
-			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			//Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			Class.forName("org.postgresql.Driver");
 			con = DriverManager.getConnection(url, userDB, passDB);
 
 		} catch (SQLException e) {
